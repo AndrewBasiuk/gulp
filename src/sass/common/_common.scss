@@ -1,0 +1,421 @@
+body {
+	background-color: #fff;
+}
+@keyframes fade {
+	from{opacity: 0}
+	to{opacity: 1}
+}
+@keyframes slide_left {
+	from{transform: translateX(-20%); opacity: 0;}
+	to{transform: translateX(0); opacity: 1}
+}
+@keyframes slide_right {
+	from{transform: translateX(20%); opacity: 0;}
+	to{transform: translateX(0); opacity: 1}
+}
+
+.button {
+	color: #fff;
+	border-radius: 3px;
+	font-family: $robotoMed;
+	font-size: 15/16*1rem;
+	color: #fff;
+	text-transform: uppercase;
+	background-color: $green;
+	border: none;
+	transition: all 0.3s;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #34BF6E;
+	}
+}
+
+.main-container {
+	/*max-width: 1353px;*/
+	margin: 0 auto;
+}
+
+.container {
+	width: 940/1353*100%;
+	margin: 0 auto;
+}
+
+.head {
+	background-color: #fff; 
+}
+
+.header {
+	height: 45px;
+	background-color: #2C3E50;
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		height: 100%;
+		transform: translateX(-20%);
+		opacity: 0;
+		animation: slide_left 1s forwards;
+	}
+
+	&__button {
+		padding: 8px 20px;
+		transform: translateX(20%);
+		opacity: 0;
+		animation: slide_right 1s forwards;
+	}
+}
+
+
+.nav {
+	opacity: 0;
+	animation: fade 2s 0.7s forwards;
+	&-list {
+		display: flex;
+
+		&__item {
+			margin-right: 37px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		&__link {
+			position: relative;
+			font-family: $roboto;
+			font-size: 15/16*1rem;
+			color: #fff;
+			text-transform: lowercase;
+
+			&:before {
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				height: 2px;
+				width: 0;
+				background-color: $green;
+				content: "";
+				transition: all 0.3s;
+			}
+
+			&:hover:before {
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+.head-slider-wrap {
+	position: relative;
+	opacity: 0;
+	animation: fade 2s 1.2s forwards;
+}
+
+.head-slider {
+	height: 100%;
+
+	.slick-slider {
+    	margin-bottom: 0 !important;
+    }
+
+	&__item {
+		position: relative;
+	}
+
+	&__image {
+		width: 100%;
+	}
+
+	&-content {
+		position: absolute;
+		top: 50%;
+		right: 340/1353*100%;
+		transform: translateY(-50%);
+
+		div {
+			width: 100%;
+			text-align: center;
+		}
+
+		&__button {
+			display: inline-block;
+			padding: 10px 0;
+			width: 80px;
+			text-align: center;
+			font-family: $roboto;
+			font-size: 20/16*1rem;
+		}
+	}
+
+	&__heading {
+		color: #000;
+		font-family: $robotoThin;
+		font-size: 55/16*1rem;
+		text-align: center;
+		margin-bottom: 35px;
+		letter-spacing: 1px;
+		line-height: 1.2;
+	}
+
+	&__button {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background-color: transparent;
+		border: none;
+		outline: none;
+		cursor: pointer;
+
+		&-prev {
+			left: 27%;
+		}
+		&-next {
+			right: 230/1353*100%;
+		}
+	}
+
+	.slick-dots {
+        position: absolute;
+        bottom: 20px;
+        width: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+
+        li {
+            margin: 0 3px;
+            background-color: #73847B; 
+            border-radius: 50%;
+            box-sizing: border-box;
+            width: 15px;
+            height: 15px; 
+        }
+
+        button {
+            position: relative;
+            background-color: #73847B;
+            border: none;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            outline: none;
+            content: " ";
+        }
+
+        .slick-active button {
+            background-color: #2C3E50; 
+            opacity: 1;
+        }
+    }
+}
+
+.you {
+	opacity: 0;
+	animation: fade 2s 1.5s forwards;
+	padding: 60px 0 80px 0;
+	background-color: #fff;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.you-about {
+	width: 452/940*100%;
+
+	&__heading {
+		color: #000;
+		font-family: $robotoLight;
+		font-size: 35/16*1rem;
+		margin-bottom: 25px;
+	}
+
+	&__text {
+		color: #000;
+		font-family: $robotoLight;
+		font-size: 15/16*1rem;
+		line-height: 1.8;
+	}
+}
+
+.you-photo {
+	width: 380/940*100%;
+	position: relative;
+
+	&__image {
+		width: 100%;
+	}
+
+	&__text {
+		position: absolute;
+		top: -20px;
+		left: 0;
+		color: #000;
+		font-family: $robotoLight;
+		font-size: 11/16*1rem;
+	}
+}
+
+
+.contact {
+	position: relative;
+	background: url(../img/contact-bg.jpg) center center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	/*padding: 80px 85px;*/
+	height: 520px;
+
+	&-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding: 25px 80px 30px 80px;
+		background-color: #fff;
+	}
+
+	&__heading {
+		color: $dark-gray;
+		font-family: $robotoThin;
+		font-size: 35/16*1rem;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+}
+
+.form {
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__input {
+		width: 100%;
+		padding: 10px 0 12px 20px;
+		box-sizing: border-box;
+		color: #000;
+		font-family: $robotoLight;
+		font-size: 20/16*1rem;
+		margin-bottom: 10px;
+		border-radius: 3px;
+		border: none;
+		border-top: 1px solid #C4C4C4;
+		background-color: #F5F5F5;
+	}
+
+	&__button {
+		padding: 12px 0 14px 0;
+		width: 120px;
+		font-family: $roboto;
+		font-size: 20/16*1rem;
+	}
+}
+
+/*style for select*/
+/*the container must be positioned relative:*/
+.select-wrap {
+  position: relative;
+	margin-bottom: 20px;
+	width: 100%;
+}
+.select-wrap select {
+  display: none; /*hide original SELECT element:*/
+}
+.select-selected {
+	width: 100%;
+	padding: 10px 0 17px 20px;
+	box-sizing: border-box;
+	color: $dark-gray;
+	font-family: $robotoLight;
+	font-size: 20/16*1rem;
+	border-radius: 3px;
+	border-top: 1px solid #C4C4C4;
+	background-color: #F5F5F5;
+}
+
+.result-list-top {
+	.select-selected {
+		width: 100%;
+		border-radius: 3px;
+	    background-color: #F5F5F5;
+	}
+	.select-items {
+		min-width: 90px;
+		max-width: 90px;
+		left: 110px;
+	}
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #000;
+  color: $dark-gray;
+  font-family: $robotoLight;
+  font-size: 20/16*1rem;
+  cursor: pointer;
+}
+.select-items div {
+	padding: 10px 0 12px 20px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #C4C4C4;
+}
+/*style items (options):*/
+.select-items {
+	padding: 3px 3px 3px 0;
+  position: absolute;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  border: 1px solid #C4C4C4;
+  border-radius: 3px;
+  background-color: #fff;
+  margin-top: 8px;
+  top: 75%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+
+    &::-webkit-scrollbar {
+		height: 3px;
+		width: 5px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: #555555;
+		border-radius: 10px;
+
+	}
+	&::-webkit-scrollbar-track {
+		background-color: #DDDDDD;
+		border-radius: 10px;
+	}
+
+}
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected {
+  /*color: $blue;*/
+}
+/*end__style for select*/
+
+
+.footer {
+	padding: 15px 0;
+	background-color: #2C3E50;
+
+	&__text {
+		color: #fff;
+		font-family: $robotoLight;
+		font-size: 15/16*1rem;
+		text-align: center;
+	}
+}
